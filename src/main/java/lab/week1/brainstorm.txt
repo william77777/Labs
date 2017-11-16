@@ -1,0 +1,39 @@
+nouns: 
+	audition
+	performers
+	show
+	dancers
+	vocalists
+	union id
+	style
+	key
+	volume
+verbs:
+	performs
+	identifies
+	asked
+	annouce
+	indicate
+	dance
+	sing
+Objects:
+	Main: Audition
+		- one performer at a time
+	Performers
+		-“[id] - performer.”
+		-union id
+		-type
+		Performers
+		Dancers
+			-[style]
+			-“[style] - [union id] - dancer”
+		Vocalists
+			-key
+			-[volume]: 1..10
+			-“I sing in the key of - [key] - [union id]"
+			-“I sing in the key of - [key] - at the volume [volume] - [union id] ”
+		
+		
+		
+		
+		
