@@ -1,4 +1,4 @@
-package lab.week2.src.enums;
+package lab.week2.entities.enums;
 
 public enum BoatType implements VehicleType{
 	BARGE, CARGO, SPEED, YACHT;

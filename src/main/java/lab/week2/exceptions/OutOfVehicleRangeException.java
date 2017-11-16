@@ -1,4 +1,4 @@
-package lab.week2.src;
+package lab.week2.exceptions;
 
 public class OutOfVehicleRangeException extends RuntimeException {
 

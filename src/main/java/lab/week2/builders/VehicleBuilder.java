@@ -1,17 +1,17 @@
-package lab.week2.src.builders;
+package lab.week2.builders;
 
 import java.time.LocalDate;
 
-import lab.week2.src.OutOfVehicleRangeException;
-import lab.week2.src.entities.Vehicle;
-import lab.week2.src.entities.Boat.Boat;
-import lab.week2.src.entities.automobile.Automobile;
-import lab.week2.src.entities.automobile.Diesal;
-import lab.week2.src.entities.automobile.Electric;
-import lab.week2.src.entities.automobile.Standard;
-import lab.week2.src.enums.AutomobileType;
-import lab.week2.src.enums.BoatType;
-import lab.week2.src.enums.VehicleType;
+import lab.week2.entities.Vehicle;
+import lab.week2.entities.Boat.Boat;
+import lab.week2.entities.automobile.Automobile;
+import lab.week2.entities.automobile.Diesal;
+import lab.week2.entities.automobile.Electric;
+import lab.week2.entities.automobile.Standard;
+import lab.week2.entities.enums.AutomobileType;
+import lab.week2.entities.enums.BoatType;
+import lab.week2.entities.enums.VehicleType;
+import lab.week2.exceptions.OutOfVehicleRangeException;
 
 public class VehicleBuilder {
 
@@ -19,7 +19,7 @@ public class VehicleBuilder {
 	private Vehicle vehicle;
 
 	// Vehicle values
-	private String vin;
+	private long vin;
 	private int range;
 	private double price;
 	private int code;
@@ -72,7 +72,7 @@ public class VehicleBuilder {
 		return vehicle;
 	}
 
-	public VehicleBuilder setVin(String vin) {
+	public VehicleBuilder setVin(long vin) {
 		this.vin = vin;
 		return this;
 	}

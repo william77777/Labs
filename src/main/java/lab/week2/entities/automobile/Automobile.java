@@ -1,14 +1,14 @@
-package lab.week2.src.entities.automobile;
+package lab.week2.entities.automobile;
 
-import lab.week2.src.entities.Vehicle;
+import lab.week2.entities.Vehicle;
 
 public abstract class Automobile extends Vehicle {
 	private final String displayInfo = "%s by %s with VIN %s is available to rent in %s. This %s has a range of %d and only costs %.2f%n";
-	private String color;
+	private final String color;
 	private final String manufacturer;
-	private boolean isLimitable, isRenewable;
+	private final boolean isLimitable, isRenewable;
 
-	public Automobile(String vin, int range, double price, int code, double luxuryTax, String color,
+	public Automobile(long vin, int range, double price, int code, double luxuryTax, String color,
 			String manufacturer, boolean isLimitable, boolean isRenewable) {
 		super(vin, range, price, code, luxuryTax);
 		this.color = color;
@@ -39,9 +39,9 @@ public abstract class Automobile extends Vehicle {
 					this.isLimitable ? "beast" : "monster", this.getRange(), this.calculateCost());
 	}
 
-	public String getDisplayInfo(String carType, String manufacturer, String vin, String color, String descriptor,
+	public String getDisplayInfo(String carType, String manufacturer, long l, String color, String descriptor,
 			int range, double cost) {
-		return String.format(displayInfo, carType, manufacturer, vin, color, descriptor, range, cost);
+		return String.format(displayInfo, carType, manufacturer, l, color, descriptor, range, cost);
 	}
 
 	@Override
