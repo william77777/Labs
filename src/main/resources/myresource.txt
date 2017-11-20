@@ -1,0 +1,2 @@
+The name of my project: ${name}
+Hello, this is ${firstName} ${lastName} and my email address is ${email}!

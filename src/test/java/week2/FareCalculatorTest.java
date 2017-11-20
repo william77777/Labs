@@ -47,4 +47,5 @@ public class FareCalculatorTest {
 		System.out.println(calculator.displayVehiclesAndTotalCost());
 	}
 
+	
 }
