@@ -1,36 +1,27 @@
 package week1;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-import week1.entities.Dancer;
 import week1.entities.Performer;
-import week1.entities.Vocalist;
 
 public class Audition {
-	public static void main(String[] args) {
-		List<Performer> performers = new LinkedList<>(Arrays.asList(
-				new Performer(),
-				new Performer(),
-				new Performer(),
-				new Performer(),
-				new Dancer("tap"),
-				new Dancer("SomeSillyStyle"),
-				new Vocalist('G')
-		));
-		
-		// have all performers perform the standard performance
-		for(Performer performer : performers) {
-			System.out.println(performer.getPerformance());
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		// have vocalist sing at a certain volume
-		System.out.println(((Vocalist) performers.get(6)).getPerformance(5));
+
+	private Map<Long, Performer> performers;
+
+	public Audition() {
+		this.performers = new HashMap<>();
+	}
+	
+	public void addAudition(Performer p) {
+		this.performers.put(p.getUnionId(), p);
+	}
+	
+	public void performAuditions(int auditions) {
+		if(auditions > this.performers.size())
+			throw new IllegalArgumentException("Requested number of auditions exceeds current number of auditions");
+		Object [] p = performers.values().toArray();
+		for(int i=0; i<auditions; i++)
+			System.out.println(((Performer)p[i]).getPerformance());
 	}
 }

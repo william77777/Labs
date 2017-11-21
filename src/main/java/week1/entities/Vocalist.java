@@ -1,46 +1,38 @@
 package week1.entities;
 
-import week1.VolumeOutOfRangeException;
-
 public class Vocalist extends Performer {
 
 	private char key;
-	
+
 	public Vocalist(char key) {
 		super();
+		if (!Character.isLetter(key))
+			throw new IllegalArgumentException("Key must be a letter");
+		this.key = key;
+	}
+
+	public Vocalist(long id, char key) {
+		super(id);
+		if (!Character.isLetter(key))
+			throw new IllegalArgumentException("Key must be a letter");
 		this.key = key;
 	}
 
 	@Override
 	public String getPerformance() {
-		return new StringBuilder()
-				.append("I sing in the key of")
-				.append(this.DELIMITER)
-				.append(this.key)
-				.append(this.DELIMITER)
-				.append(this.unionId)
-				.toString();
+		return super.buildString("I sing in the key of", this.key, super.getUnionId());
 	}
-	
+
 	/**
 	 * 
 	 * @param volume
 	 * @return
 	 * @throws VolumeOutOfRangeException
 	 */
-	public String getPerformance(int volume) throws VolumeOutOfRangeException {
-		if(volume < 0 || volume > 10)
-			throw new VolumeOutOfRangeException("Volume needs to be between 0 and 10");
-		return new StringBuilder()
-				.append("I sing in the key of")
-				.append(this.DELIMITER)
-				.append(this.key)
-				.append(this.DELIMITER)
-				.append("at the volume ")
-				.append(volume)
-				.append(this.DELIMITER)
-				.append(this.unionId)
-				.toString();
+	public String getPerformance(int volume) {
+		if (volume < 0 || volume > 10)
+			throw new IllegalArgumentException("Volume needs to be between 0 and 10");
+		return super.buildString("I sing in the key of", this.key, "at the volume " + volume, super.getUnionId());
 	}
-	
+
 }
