@@ -1,19 +1,8 @@
 package week1.entities;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 public class Performer {
-	private static final AtomicLong generator = new AtomicLong(0l);
-
 	private static final String DELIMITER = " - ";
 	private final long unionId;
-
-	/**
-	 * Must call super constructor to initialize id
-	 */
-	public Performer() {
-		this.unionId = generator.getAndIncrement();
-	}
 
 	/**
 	 * Call with IdGen.generateId()
@@ -25,7 +14,7 @@ public class Performer {
 	}
 
 	public String getPerformance() {
-		return buildString(this.unionId, "performer");
+		return this.buildString(this.unionId, "performer");
 	}
 
 	public long getUnionId() {

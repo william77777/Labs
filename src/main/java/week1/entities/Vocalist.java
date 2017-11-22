@@ -4,13 +4,6 @@ public class Vocalist extends Performer {
 
 	private char key;
 
-	public Vocalist(char key) {
-		super();
-		if (!Character.isLetter(key))
-			throw new IllegalArgumentException("Key must be a letter");
-		this.key = key;
-	}
-
 	public Vocalist(long id, char key) {
 		super(id);
 		if (!Character.isLetter(key))

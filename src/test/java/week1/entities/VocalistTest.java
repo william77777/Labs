@@ -29,4 +29,10 @@ public class VocalistTest extends PerformerTest {
 		Vocalist v = new Vocalist(1245, 'G');
 		v.getPerformance(11);
 	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void test_catchVolumeNotBetweenZeroAndTen_producesIllegalArgumentException1() {
+		Vocalist v = new Vocalist(1245, 'G');
+		v.getPerformance(-1);
+	}
 }
