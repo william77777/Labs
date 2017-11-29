@@ -44,10 +44,10 @@ public class BaseVehicleBuilderTest {
 				{ BigDecimal.valueOf(1100.91), BaseVehicleBuilder.builderFor(AutomobileType.DIESAL) },
 				{ BigDecimal.valueOf(5149.59), BaseVehicleBuilder.builderFor(AutomobileType.SEMIDIESAL) },
 				// boats
-				{ BigDecimal.valueOf(66078.13), BaseVehicleBuilder.builderFor(BoatType.YACHT) },
-				{ BigDecimal.valueOf(16329.62), BaseVehicleBuilder.builderFor(BoatType.SPEED) },
-				{ BigDecimal.valueOf(32802.64), BaseVehicleBuilder.builderFor(BoatType.BARGE) },
-				{ BigDecimal.valueOf(77211.51), BaseVehicleBuilder.builderFor(BoatType.CARGO) } }));
+				{ BigDecimal.valueOf(60868.3), BaseVehicleBuilder.builderFor(BoatType.YACHT) },
+				{ BigDecimal.valueOf(4218.52), BaseVehicleBuilder.builderFor(BoatType.SPEED) },
+				{ BigDecimal.valueOf(8971.81), BaseVehicleBuilder.builderFor(BoatType.BARGE) },
+				{ BigDecimal.valueOf(18315.93), BaseVehicleBuilder.builderFor(BoatType.CARGO) } }));
 
 		// set and build
 		for (Object[] p : parameters) {

@@ -16,12 +16,13 @@ public class Boat extends Vehicle {
 
 	@Override
 	public String getDisplayInfo() {
-		return getDisplayInfo(this.getClass().getSimpleName(), this.getVin(), this.getRange(), this.calculateCost());
+		return getDisplayInfo(getBoatTypeName(), this.getVin(), this.getRange(), this.calculateCost());
 	}
 
+
 	public String getDisplayInfo(double discount) {
-		return getDisplayInfo(this.getClass().getSimpleName(), this.getVin(), this.getRange(),
-				BigDecimal.valueOf(this.calculateCost() * (1-discount)).doubleValue());
+		return getDisplayInfo(getBoatTypeName(), this.getVin(), this.getRange(),
+				BigDecimal.valueOf(this.calculateCost() * (1 - discount)).doubleValue());
 	}
 
 	public String getDisplayInfo(String boatType, long l, int range, double cost) {
@@ -30,6 +31,12 @@ public class Boat extends Vehicle {
 
 	public final BoatType getBoatType() {
 		return boatType;
+	}
+
+	private String getBoatTypeName() {
+		String boatName = this.getBoatType().toString();
+		boatName = boatName.charAt(0) + boatName.substring(1).toLowerCase();
+		return boatName;
 	}
 
 }

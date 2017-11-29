@@ -24,7 +24,7 @@ public abstract class Vehicle {
 	 */
 	public final double calculateCost() {
 		if (this.getClass().equals((Boat.class))) {
-			return calculateCost(BigDecimal.valueOf(this.getRange() == 0 ? 1.0 : this.getRange() / 7.0).doubleValue());
+			return calculateCost(BigDecimal.valueOf(this.getRange() == 0 ? 1.0 : this.getRange()).doubleValue());
 		} else {
 			if (this.getRange() == 0)
 				throw new IllegalArgumentException("Non-boat vehicles cannot have a range of 0.");

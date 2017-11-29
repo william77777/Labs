@@ -14,6 +14,7 @@ import org.mockito.MockitoAnnotations;
 
 import calculator.builders.BaseVehicleBuilder;
 import calculator.entities.Vehicle;
+import calculator.entities.Boat.Boat;
 import calculator.entities.automobile.Diesal;
 import calculator.entities.automobile.Standard;
 import calculator.entities.enums.AutomobileType;
@@ -72,7 +73,7 @@ public class FareCalculatorTest {
 	@Test
 	public void testCalculateGroupCost() {
 		setUpBaseVehicles();
-		assertEquals(183969.44, calculator.calculateGroupCost(), DIFF);
+		assertEquals(149327.58, calculator.calculateGroupCost(), DIFF);
 	}
 
 	@Test
@@ -122,14 +123,13 @@ public class FareCalculatorTest {
 	@Test
 	public void test_boat_withDiscount() {
 		initDiscount(true);
-		Vehicle v = BaseVehicleBuilder.builderFor(BoatType.YACHT).setVin(90210).setRange(6800).build();
+		Boat v = (Boat) BaseVehicleBuilder.builderFor(BoatType.YACHT).setVin(90210).setRange(6800).build();
 		calculator.addVehicle(v);
 		assertEquals(52996.52, calculator.calculateGroupCost(discountCalculator.calculateDiscount(discountDay)), DIFF);
 		assertEquals(
 				"Yacht with VIN 90210 is available to rent. This beauty has a range of 6,800 and only costs $52,996.52",
-				v.getDisplayInfo());
+				v.getDisplayInfo(discountCalculator.calculateDiscount(discountDay)));
 	}
-
 
 	@Test
 	public void test_standard_withoutDiscount() {
