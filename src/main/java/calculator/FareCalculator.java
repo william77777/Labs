@@ -14,17 +14,9 @@ public class FareCalculator {
 	public FareCalculator() {
 		this.vehicles = new LinkedList<>();
 	}
-	
-	public FareCalculator(List<Vehicle> vehicles) {
-		this.vehicles = new LinkedList<>(vehicles);
-	}
 
 	public void addVehicle(Vehicle vehicle) {
 		this.vehicles.add(vehicle);
-	}
-
-	public void clear() {
-		this.vehicles.clear();
 	}
 
 	public double calculateGroupCost() {
