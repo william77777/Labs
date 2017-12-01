@@ -1,4 +1,4 @@
-import trackingsystem.TrackingSystem;
+package trackingsystem;
 import trackingsystem.entities.Passenger;
 import trackingsystem.entities.PassengerType;
 
