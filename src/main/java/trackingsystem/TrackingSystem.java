@@ -32,7 +32,7 @@ public class TrackingSystem {
 	public final double getTotalFare() {
 		BigDecimal fare = new BigDecimal(0);
 		for (Passenger p : passengers)
-			fare.add(this.calcFare(p));
+			fare = fare.add(this.calcFare(p));
 		return fare.doubleValue();
 	}
 
